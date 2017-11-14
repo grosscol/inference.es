@@ -1,0 +1,19 @@
+---
+nginx_ppa_use: true
+nginx_remove_default_vhost: true
+nginx_vhosts:
+  - listen: "80"
+    server_name: "inference.es"
+    server_name_redirect: "www.inference.es"
+    root: "/var/www/inference.es"
+    index: "index.html"
+    error_page: "404 /404.html"
+    access_log: "/var/log/nginx/access.log"
+    error_log: "/var/log/nginx/error.log"
+    state: "present"
+    template: "{{ nginx_vhost_template }}"
+    extra_parameters: |
+      location / {
+        root /var/www/inference.es;
+      }
+    filename: "inference.es.conf"
