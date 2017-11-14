@@ -2,9 +2,6 @@
 
 Reasoning and Inference Architecture
 
-## Static Site
-Jekyll generated static site for slides, front page, etc.
-
 ## Ansible Playbook
 Deployment script to be run from the bastion or vagrant host.
 
