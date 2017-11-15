@@ -9,6 +9,12 @@
     register: output
     changed_when: output.stdout != ""
 
+- hosts: apphosts
+  become: true
+  remote_user: ubuntu
+  roles:
+    - geerlingguy.java
+
 - hosts: webhosts
   become: true
   remote_user: ubuntu
