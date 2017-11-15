@@ -15,6 +15,7 @@ nginx_vhosts:
     extra_parameters: |
       location / {
         root /var/www/inference.es;
+        try_files $uri $uri/index.html $uri.html =404;
       }
     filename: "inference.es.conf"
 
