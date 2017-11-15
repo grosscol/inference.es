@@ -1,2 +1,3 @@
 ---
-- src: gerrlinguy.nginx
+- src: geerlingguy.java
+- src: geerlingguy.nginx
