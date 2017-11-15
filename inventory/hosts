@@ -4,7 +4,7 @@
 web ansible_host=web.internal ansible_user='ubuntu'
 
 [apphosts]
-kgrid ansible_host=kgrid.internal ansible_user='ubuntu'
-stardog ansible_host=stardog.internal ansible_user='ubuntu'
+# kgrid ansible_host=kgrid.internal ansible_user='ubuntu'
+# stardog ansible_host=stardog.internal ansible_user='ubuntu'
 
 
