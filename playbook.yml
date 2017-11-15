@@ -46,8 +46,14 @@
 - hosts: apphosts
   become: true
   remote_user: ubuntu
+  tasks:
+    - name: installing repo for Java 8 in Ubuntu
+      apt_repository: repo='ppa:openjdk-r/ppa'
   roles:
-    - geerlingguy.java
+    - role: geerlingguy.java
+      when: "ansible_os_family == 'Debian'"
+      java_packages:
+        - openjdk-8-jdk
 
 - hosts: webhosts
   become: true
@@ -67,11 +73,11 @@
         path: "/var/www/inference.es"
         state: directory
         owner: "{{ nginx_user }}"
-        mode: 02744
+        mode: 02755
     - name: unpack site to nginx default site
       unarchive:
         dest: "/var/www/inference.es"
         remote_src: yes
         src: "/tmp/site.tgz"
         owner: "{{ nginx_user }}"
-        mode: 0744
+        mode: 0755
