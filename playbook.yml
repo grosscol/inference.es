@@ -8,6 +8,8 @@
     raw: bash -c "test -e /usr/bin/python || (apt -qqy update && apt install -qqy python python-pip)"
     register: output
     changed_when: output.stdout != ""
+  roles:
+    - jnv.unattended-upgrades
 
 - hosts: apphosts
   become: true

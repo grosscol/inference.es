@@ -17,3 +17,5 @@ nginx_vhosts:
         root /var/www/inference.es;
       }
     filename: "inference.es.conf"
+
+unattended_automatic_reboot: true
