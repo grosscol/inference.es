@@ -1,4 +1,3 @@
 ---
 - src: geerlingguy.java
 - src: geerlingguy.nginx
-- src: jnv.unattended-upgrades
