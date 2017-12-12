@@ -18,5 +18,3 @@ nginx_vhosts:
         try_files $uri $uri/index.html $uri.html =404;
       }
     filename: "inference.es.conf"
-
-unattended_automatic_reboot: true

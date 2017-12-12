@@ -27,7 +27,6 @@ Vagrant.configure("2") do |config|
   config.vm.provider "virtualbox" do |vb|
     # Display the VirtualBox GUI when booting the machine
     vb.gui = false
-    vb.name = "wibble"
   
     # Customize the amount of memory on the VM:
     vb.memory = "1024"
@@ -39,7 +38,7 @@ Vagrant.configure("2") do |config|
     ansible.playbook = "playbook.yml"
     ansible.groups = {
       "webhosts" => [],
-      "apphosts" => ["default", "wibble"]
+      "apphosts" => ["default"]
     }
   end
 end
